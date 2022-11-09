@@ -1,11 +1,11 @@
 if $::hostname == 'domain.com' {
  
-    class {'nginx': }
-    nginx::resource::upstream { 'www.domain.com':
-      members => [
-        '10.10.10.10',
-      ],
-    }
+class {'nginx': }
+  nginx::resource::upstream { 'www.domain.com':
+    members => [
+      '10.10.10.10',
+    ],
+}
 nginx::resource::upstream { 'www.domain.com':
   members => {
     '10.10.10.10:80' => {
